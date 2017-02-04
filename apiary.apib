@@ -1,28 +1,97 @@
 FORMAT: 1A
-HOST: http://polls.apiblueprint.org/
 
 # Chatbot Backend API
 
-Polls is a simple API allowing consumers to view polls and vote in them.
+Design for Chatbot back end
 
-## Beers Collection [/beers]
+## Seats Collection [/seats]
+Avaialable seats
 
-### List All Questions [GET]
+### List All Seats [GET]
+
+Lists all available seats on offer
 
 + Response 200 (application/json)
 
         [
             {
-                "beers": [
-                    {
-                        "name": "Pilsner Urquell"
-                    }, {
-                        "name": "Guiness"
-                    }, {
-                        "name": "Pliny the Elder"
-                    }, {
-                        "name": "Stella Artois"
-                    }
-                ]
+                "section": "A",
+                "number": "1",
+                "available": true,
+                "price": 0,
+                "link": {
+                    "rel": "image",
+                    "href": "http://my.link.tld/image.png"
+                }
+            },
+            {
+                "section": "A",
+                "number": "2",
+                "available": true,
+                "price": 0,
+                "link": {
+                    "rel": "image",
+                    "href": "http://my.link.tld/image.png"
+                }
+            },
+            {
+                "section": "A",
+                "number": "3",
+                "available": true,
+                "price": 0,
+                "link": {
+                    "rel": "image",
+                    "href": "http://my.link.tld/image.png"
+                }
+            },
+            {
+                "section": "A",
+                "number": "4",
+                "available": true,
+                "price": 0,
+                "link": {
+                    "rel": "image",
+                    "href": "http://my.link.tld/image.png"
+                }
+            },
+        ]
+
+## Beers Collection [/beers]
+Avaialable beers
+
+### List All Beers [GET]
+
+Lists all available beers on offer
+
++ Response 200 (application/json)
+
+        [
+            {
+                "name": "Beer1",
+                "link": {
+                    "rel": "image",
+                    "href": "http://my.link.tld/image.png"
+                }
+            },
+            {
+                "name": "Beer2",
+                "link": {
+                    "rel": "image",
+                    "href": "http://my.link.tld/image.png"
+                }
+            },
+            {
+                "name": "Beer3",
+                "link": {
+                    "rel": "image",
+                    "href": "http://my.link.tld/image.png"
+                }
+            },
+            {
+                "name": "Beer4",
+                "link": {
+                    "rel": "image",
+                    "href": "http://my.link.tld/image.png"
+                }
             }
         ]
