@@ -1,0 +1,28 @@
+FORMAT: 1A
+HOST: http://polls.apiblueprint.org/
+
+# Chatbot Backend API
+
+Polls is a simple API allowing consumers to view polls and vote in them.
+
+## Beers Collection [/beers]
+
+### List All Questions [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "beers": [
+                    {
+                        "name": "Pilsner Urquell"
+                    }, {
+                        "name": "Guiness"
+                    }, {
+                        "name": "Pliny the Elder"
+                    }, {
+                        "name": "Stella Artois"
+                    }
+                ]
+            }
+        ]
