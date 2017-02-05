@@ -4,12 +4,17 @@ FORMAT: 1A
 
 Design for Chatbot back end
 
-## Seats Collection [/seats]
+## Seats Collection [/seats{?availability}]
 Game seats
 
 ### List All Seats [GET]
 
 Lists all seats and availability
+
++ Parameters
+
+    + availability: true (boolean, optional) - The maximum number of results to return.
+
 
 + Response 200 (application/json)
 
@@ -65,33 +70,37 @@ Lists all available beers on offer
 
 + Response 200 (application/json)
 
-        [
-            {
-                "name": "Beer1",
-                "link": {
-                    "rel": "image",
-                    "href": "http://my.link.tld/image.png"
+        {
+            "count": 4,
+            "beers": [
+                {
+                    "name": "Beer1",
+                    "link": {
+                        "rel": "image",
+                        "href": "http://my.link.tld/image.png"
+                    }
+                },
+                {
+                    "name": "Beer2",
+                    "link": {
+                        "rel": "image",
+                        "href": "http://my.link.tld/image.png"
+                    }
+                },
+                {
+                    "name": "Beer3",
+                    "link": {
+                        "rel": "image",
+                        "href": "http://my.link.tld/image.png"
+                    }
+                },
+                {
+                    "name": "Beer4",
+                    "link": {
+                        "rel": "image",
+                        "href": "http://my.link.tld/image.png"
+                    }
                 }
-            },
-            {
-                "name": "Beer2",
-                "link": {
-                    "rel": "image",
-                    "href": "http://my.link.tld/image.png"
-                }
-            },
-            {
-                "name": "Beer3",
-                "link": {
-                    "rel": "image",
-                    "href": "http://my.link.tld/image.png"
-                }
-            },
-            {
-                "name": "Beer4",
-                "link": {
-                    "rel": "image",
-                    "href": "http://my.link.tld/image.png"
-                }
-            }
-        ]
+            ]
+        
+        }
