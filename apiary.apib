@@ -13,87 +13,62 @@ A list of upcoming fixtures
 
         [
             {
-            "self": 1,
-            "date": "2017-07-12",
-            "time": "8pm",
-            "opposition": "Rising Pune Supergiants"
+                "id": 1,
+                "date": "05/12/2017",
+                "opp": "RISING PUNE SUPERGIANTS",
+                "time": "8:00PM IST"
             },
-            
             {
-            "id": 2,
-            "date": "2017-07-14",
-            "time": "8pm",
-            "opposition": "Royal Challengers Bangalore"
-            },
+                "id": 2,
+                "date": "05/14/2017",
+                "opp": "ROYAL CHALLENGERS BANGLORE"
+                "time": "8:00PM IST"
+            }
         ]
 
 
-## Packages Collection [/fixtures/{id}/packages]
-Seating and offer packages
+## Tickets Collection [/fixtures/{id}/packages]
+Seat tickets and offer packages
 
 + Parameters
     + id - Fixture that the packages are offered for
 
-### List All Packages [GET]
+### List All Tickets [GET]
 
 + Response 200 (application/json)
 
         [
             {
                 "id": 1,
-                "section": "Section 115",
-                "row": "3",
-                "available": true,
-                "price": 299,
-                "link": {
-                    "rel": "image",
-                    "href": "https://publicdocs-corp.documents.us2.oraclecloud.com/documents/link/LF7206C60A9212DA72124CA9F6C3FF17C1177E4725F3/file/D2BA28E8C506DC0CDA4F9C14F6C3FF17C1177E4725F3?allowInterrupt=1"
-                }
+                "tlisting": "NE (2,3). NW Gr Floor, NW (1-3)",
+                "tSelected": "North West Ground Floor",
+                "tPrices": 1249.00,
+                "tPricesStr": "Rs 1249.00",
+                "tChoices": "REGULAR",
+                "tDesc": "A/C enclosed seating. Buffet and Beverages.",
+                "tImageUrl": "https://publicdocs-corp.documents.us2.oraclecloud.com/documents/link/LF7206C60A9212DA72124CA9F6C3FF17C1177E4725F3/file/D42B8FD2922F1BF779A8F12FF6C3FF17C1177E4725F3?allowInterrupt=1"
             },
             {
                 "id": 2,
-                "section": "Section 216",
-                "row": "7",
-                "available": true,
-                "price": 219,
-                "link": {
-                    "rel": "image",
-                    "href": "https://publicdocs-corp.documents.us2.oraclecloud.com/documents/link/LF7206C60A9212DA72124CA9F6C3FF17C1177E4725F3/file/D2BA28E8C506DC0CDA4F9C14F6C3FF17C1177E4725F3?allowInterrupt=1"
-                }
+                "tlisting": "OCH (1)",
+                "tSelected": "OCH",
+                "tPrices": 5000.00,
+                "tPricesStr": "Rs 5000.00",
+                "tChoices": "PREMIUM’,
+                "tDesc": "A/C F&B lounge. Premium beverages. Outdoor Spectator Gallery (A perfect view).",
+                "tImageUrl": "https://publicdocs-corp.documents.us2.oraclecloud.com/documents/link/LF7206C60A9212DA72124CA9F6C3FF17C1177E4725F3/file/DD408908DF04DCDA7767BDCBF6C3FF17C1177E4725F3?allowInterrupt=1"
             },
             {
-                "section": "Section 229",
-                "row": "12",
-                "available": true,
-                "price": 146,
-                "link": {
-                    "rel": "image",
-                    "href": "https://publicdocs-corp.documents.us2.oraclecloud.com/documents/link/LF7206C60A9212DA72124CA9F6C3FF17C1177E4725F3/file/DF03AD812F69F02A82C04FC2F6C3FF17C1177E4725F3?allowInterrupt=1"
-                }
+                "id": 3,
+                "tlisting": "W Corp Box (37). Platinum Gallery Bay Area",
+                "tSelected": "Platinum Gallery Bay Area",
+                "tPrices": 12000.00,
+                "tPricesStr": "Rs 12000.00",
+                "tChoices": "PLATINUM’,
+                "tDesc": "A/C F&B lounge. Full dinner buffet (veg & non veg) with drinks. Good Viewing experience: right behind the player"s dugout and under the dressing room.",
+                "tImageUrl": "https://publicdocs-corp.documents.us2.oraclecloud.com/documents/link/LF7206C60A9212DA72124CA9F6C3FF17C1177E4725F3/file/D475B14BE49EA7843F7F97C4F6C3FF17C1177E4725F3?allowInterrupt=1"
             }
         ]
-
-## Details Collection [/fixtures/{fixtureId}/packages/{packageId}]
-Details for a given package
-
-
-+ Parameters
-    + fixtureId - Fixture that the packages are offered for
-    + packageId - Package that the details belong to
-
-
-### Retrieve Details [GET]
-
-+ Response 200 (application/json)
-
-        {
-            "name": "Guiness",
-            "description": "No preservatives or additives. 100% natural, ingredients create a unique flavour",
-            "link": {
-                "rel": "image",
-                "href": "https://publicdocs-corp.documents.us2.oraclecloud.com/documents/link/LF7206C60A9212DA72124CA9F6C3FF17C1177E4725F3/file/D2680B911AEB03B8C3B6EF22F6C3FF17C1177E4725F3?dRevLabel=LATEST&allowInterrupt=1"
-            }
-        }
 
 ## Bookings Collection [/bookings]
 
