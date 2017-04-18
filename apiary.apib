@@ -4,17 +4,43 @@ FORMAT: 1A
 
 Design for Chatbot back end for demo session
 
-## Seats Collection [/seats]
-Game seats
+## Fixtures Collection [/fixtures]
+A list of upcoming fixtures
 
-### List All Seats [GET]
-
-Lists all seats and availability
+### List All Fixtures [GET]
 
 + Response 200 (application/json)
 
         [
             {
+            "self": 1,
+            "date": "2017-07-12",
+            "time": "8pm",
+            "opposition": "Rising Pune Supergiants"
+            },
+            
+            {
+            "id": 2,
+            "date": "2017-07-14",
+            "time": "8pm",
+            "opposition": "Royal Challengers Bangalore"
+            },
+        ]
+
+
+## Packages Collection [/fixtures/{id}/packages]
+Seating and offer packages
+
++ Parameters
+    + id - Fixture that the packages are offered for
+
+### List All Packages [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id": 1,
                 "section": "Section 115",
                 "row": "3",
                 "available": true,
@@ -25,6 +51,7 @@ Lists all seats and availability
                 }
             },
             {
+                "id": 2,
                 "section": "Section 216",
                 "row": "7",
                 "available": true,
@@ -46,47 +73,42 @@ Lists all seats and availability
             }
         ]
 
-## Beers Collection [/beers]
-Available beers
+## Details Collection [/fixtures/{fixtureId}/packages/{packageId}]
+Details for a given package
 
-### List All Beers [GET]
 
-Lists all available beers on offer
++ Parameters
+    + fixtureId - Fixture that the packages are offered for
+    + packageId - Package that the details belong to
+
+
+### Retrieve Details [GET]
 
 + Response 200 (application/json)
 
-        [
-            {
-                "name": "Guiness",
-                "description": "No preservatives or additives. 100% natural, ingredients create a unique flavour",
-                "link": {
-                    "rel": "image",
-                    "href": "https://publicdocs-corp.documents.us2.oraclecloud.com/documents/link/LF7206C60A9212DA72124CA9F6C3FF17C1177E4725F3/file/D2680B911AEB03B8C3B6EF22F6C3FF17C1177E4725F3?dRevLabel=LATEST&allowInterrupt=1"
-                }
-            },
-            {
-                "name": "Pilsner Urquell",
-                "description": "World's first pilsner. Grainy malt center with a light touch of butter flavor",
-                "link": {
-                    "rel": "image",
-                    "href": "https://publicdocs-corp.documents.us2.oraclecloud.com/documents/link/LF7206C60A9212DA72124CA9F6C3FF17C1177E4725F3/file/D38CC50D762E50731F505711F6C3FF17C1177E4725F3?dRevLabel=LATEST&allowInterrupt=1"
-                }
-            },
-            {
-                "name": "Schlappe-Seppel",
-                "description": "Smooth bitter, tangy, fruity, full-bodied - more than a beer, it's an attitude",
-                "link": {
-                    "rel": "image",
-                    "href": "https://publicdocs-corp.documents.us2.oraclecloud.com/documents/link/LF7206C60A9212DA72124CA9F6C3FF17C1177E4725F3/file/DFE12285193404897A6331F4F6C3FF17C1177E4725F3?dRevLabel=LATEST?allowInterrupt=1"
-                }
-            },
-                        {
-                "name": "Heineken",
-                "description": "Crisp, clean and refreshing, this popular beer is a classic European style Lager",
-                "link": {
-                    "rel": "image",
-                    "href": "https://publicdocs-corp.documents.us2.oraclecloud.com/documents/link/LF7206C60A9212DA72124CA9F6C3FF17C1177E4725F3/file/DE79A523EC91B0687D5AA852F6C3FF17C1177E4725F3?dRevLabel=LATEST?allowInterrupt=1"
-                }
+        {
+            "name": "Guiness",
+            "description": "No preservatives or additives. 100% natural, ingredients create a unique flavour",
+            "link": {
+                "rel": "image",
+                "href": "https://publicdocs-corp.documents.us2.oraclecloud.com/documents/link/LF7206C60A9212DA72124CA9F6C3FF17C1177E4725F3/file/D2680B911AEB03B8C3B6EF22F6C3FF17C1177E4725F3?dRevLabel=LATEST&allowInterrupt=1"
             }
-            
-        ]
+        }
+
+## Bookings Collection [/bookings]
+
+### Purchase a Ticket [POST]
+
++ Request (application/json)
+
+        {
+            "fixture": 1,
+            "package": 2
+        }
+
++ Response 200 (application/json)
+
+        {
+            "status": 0,
+            "url": "/bookings/1"
+        }
