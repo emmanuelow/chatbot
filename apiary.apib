@@ -1,92 +1,90 @@
 FORMAT: 1A
+HOST: http://oc-129-144-151-209.compute.oraclecloud.com/chatbotdemo
 
 # Chatbot Backend API
 
-Design for Chatbot back end for demo session
+Delhi Daredevils games API for chatbot back end
 
-## Seats Collection [/seats]
-Game seats
+## Fixtures Collection [/fixtures]
+A list of upcoming fixtures
 
-### List All Seats [GET]
-
-Lists all seats and availability
+### List All Fixtures [GET]
 
 + Response 200 (application/json)
 
         [
             {
-                "section": "Section 115",
-                "row": "3",
-                "available": true,
-                "price": 299,
-                "link": {
-                    "rel": "image",
-                    "href": "https://publicdocs-corp.documents.us2.oraclecloud.com/documents/link/LF7206C60A9212DA72124CA9F6C3FF17C1177E4725F3/file/D2BA28E8C506DC0CDA4F9C14F6C3FF17C1177E4725F3?allowInterrupt=1"
-                }
+                "id": 1,
+                "date": "05/12/2017",
+                "opp": "RISING PUNE SUPERGIANTS",
+                "time": "8:00PM IST"
             },
             {
-                "section": "Section 216",
-                "row": "7",
-                "available": true,
-                "price": 219,
-                "link": {
-                    "rel": "image",
-                    "href": "https://publicdocs-corp.documents.us2.oraclecloud.com/documents/link/LF7206C60A9212DA72124CA9F6C3FF17C1177E4725F3/file/D2BA28E8C506DC0CDA4F9C14F6C3FF17C1177E4725F3?allowInterrupt=1"
-                }
-            },
-            {
-                "section": "Section 229",
-                "row": "12",
-                "available": true,
-                "price": 146,
-                "link": {
-                    "rel": "image",
-                    "href": "https://publicdocs-corp.documents.us2.oraclecloud.com/documents/link/LF7206C60A9212DA72124CA9F6C3FF17C1177E4725F3/file/DF03AD812F69F02A82C04FC2F6C3FF17C1177E4725F3?allowInterrupt=1"
-                }
+                "id": 2,
+                "date": "05/14/2017",
+                "opp": "ROYAL CHALLENGERS BANGLORE"
+                "time": "8:00PM IST"
             }
         ]
 
-## Beers Collection [/beers]
-Available beers
 
-### List All Beers [GET]
+## Tickets Collection [/fixtures/{id}/tickets]
+Seat tickets and offer packages
 
-Lists all available beers on offer
++ Parameters
+    + id - Fixture that the packages are offered for
+
+### List All Tickets [GET]
 
 + Response 200 (application/json)
 
         [
             {
-                "name": "Guiness",
-                "description": "No preservatives or additives. 100% natural, ingredients create a unique flavour",
-                "link": {
-                    "rel": "image",
-                    "href": "https://publicdocs-corp.documents.us2.oraclecloud.com/documents/link/LF7206C60A9212DA72124CA9F6C3FF17C1177E4725F3/file/D2680B911AEB03B8C3B6EF22F6C3FF17C1177E4725F3?dRevLabel=LATEST&allowInterrupt=1"
-                }
+                "id": 1,
+                "tlisting": "NE (2,3). NW Gr Floor, NW (1-3)",
+                "tSelected": "North West Ground Floor",
+                "tPrices": 1249.00,
+                "tPricesStr": "Rs 1249.00",
+                "tChoices": "REGULAR",
+                "tDesc": "A/C enclosed seating. Buffet and Beverages.",
+                "tImageUrl": "https://publicdocs-corp.documents.us2.oraclecloud.com/documents/link/LF7206C60A9212DA72124CA9F6C3FF17C1177E4725F3/file/D42B8FD2922F1BF779A8F12FF6C3FF17C1177E4725F3?allowInterrupt=1"
             },
             {
-                "name": "Pilsner Urquell",
-                "description": "World's first pilsner. Grainy malt center with a light touch of butter flavor",
-                "link": {
-                    "rel": "image",
-                    "href": "https://publicdocs-corp.documents.us2.oraclecloud.com/documents/link/LF7206C60A9212DA72124CA9F6C3FF17C1177E4725F3/file/D38CC50D762E50731F505711F6C3FF17C1177E4725F3?dRevLabel=LATEST&allowInterrupt=1"
-                }
+                "id": 2,
+                "tlisting": "OCH (1)",
+                "tSelected": "OCH",
+                "tPrices": 5000.00,
+                "tPricesStr": "Rs 5000.00",
+                "tChoices": "PREMIUM’,
+                "tDesc": "A/C F&B lounge. Premium beverages. Outdoor Spectator Gallery (A perfect view).",
+                "tImageUrl": "https://publicdocs-corp.documents.us2.oraclecloud.com/documents/link/LF7206C60A9212DA72124CA9F6C3FF17C1177E4725F3/file/DD408908DF04DCDA7767BDCBF6C3FF17C1177E4725F3?allowInterrupt=1"
             },
             {
-                "name": "Schlappe-Seppel",
-                "description": "Smooth bitter, tangy, fruity, full-bodied - more than a beer, it's an attitude",
-                "link": {
-                    "rel": "image",
-                    "href": "https://publicdocs-corp.documents.us2.oraclecloud.com/documents/link/LF7206C60A9212DA72124CA9F6C3FF17C1177E4725F3/file/DFE12285193404897A6331F4F6C3FF17C1177E4725F3?dRevLabel=LATEST?allowInterrupt=1"
-                }
-            },
-                        {
-                "name": "Heineken",
-                "description": "Crisp, clean and refreshing, this popular beer is a classic European style Lager",
-                "link": {
-                    "rel": "image",
-                    "href": "https://publicdocs-corp.documents.us2.oraclecloud.com/documents/link/LF7206C60A9212DA72124CA9F6C3FF17C1177E4725F3/file/DE79A523EC91B0687D5AA852F6C3FF17C1177E4725F3?dRevLabel=LATEST?allowInterrupt=1"
-                }
+                "id": 3,
+                "tlisting": "W Corp Box (37). Platinum Gallery Bay Area",
+                "tSelected": "Platinum Gallery Bay Area",
+                "tPrices": 12000.00,
+                "tPricesStr": "Rs 12000.00",
+                "tChoices": "PLATINUM’,
+                "tDesc": "A/C F&B lounge. Full dinner buffet (veg & non veg) with drinks. Good Viewing experience: right behind the player"s dugout and under the dressing room.",
+                "tImageUrl": "https://publicdocs-corp.documents.us2.oraclecloud.com/documents/link/LF7206C60A9212DA72124CA9F6C3FF17C1177E4725F3/file/D475B14BE49EA7843F7F97C4F6C3FF17C1177E4725F3?allowInterrupt=1"
             }
-            
         ]
+
+## Bookings Collection [/bookings]
+
+### Purchase a Ticket [POST]
+
++ Request (application/json)
+
+        {
+            "fixture": 1,
+            "package": 2
+        }
+
++ Response 200 (application/json)
+
+        {
+            "status": 0,
+            "url": "/bookings/1"
+        }
