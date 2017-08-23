@@ -77,9 +77,9 @@ app.get('/seats', function (req, res) {
   res.json(seats)
 })
 
-app.get('/beers', function (req, res) {
-  res.json(beers)
-})
+// app.get('/beers', function (req, res) {
+//   res.json(beers)
+// })
 
 app.listen(port, function () {
   console.log('Chatbot API listening on port ' + port)
