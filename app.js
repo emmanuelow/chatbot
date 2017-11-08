@@ -77,7 +77,7 @@ app.get('/seats', function (req, res) {
   res.json(seats)
 })
 
-app.get('/beers', function (req, res) {
+app.get('/beer', function (req, res) {
   res.json(beers)
 })
 
