@@ -1,0 +1,126 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: "Chatbot OAS"
+  description: Design for Chatbot backend for demo session for Oracle Code. The chatbot allows you to book tickets for basketball games and list the selection of beers available at the event.
+  license:
+    name: MIT
+    url: https://github.com/apiaryio/polls-api/blob/master/LICENSE
+host: chatbot-demo-api.herokuapp.com
+basePath: /
+schemes:
+- https
+consumes:
+- application/json; charset=utf-8
+produces:
+- application/json; charset=utf-8
+paths:
+  /seats:
+    x-summary: Seats Collection
+    get:
+      summary: List All Seats
+      responses:
+        200:
+          description: Successful Response
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Seat'
+          examples:
+            application/json; charset=utf-8:
+              - section: Section 113
+                row: "3"
+                available: true
+                price: 299
+                link:
+                  rel: image
+                  href: https://publicdocs-corp.documents.us2.oraclecloud.com/documents/link/LF7206C60A9212DA72124CA9F6C3FF17C1177E4725F3/file/D2BA28E8C506DC0CDA4F9C14F6C3FF17C1177E4725F3?allowInterrupt=1
+              - section: Section 217
+                row: "7"
+                available: true
+                price: 219
+                link:
+                  rel: image
+                  href: https://publicdocs-corp.documents.us2.oraclecloud.com/documents/link/LF7206C60A9212DA72124CA9F6C3FF17C1177E4725F3/file/D2BA28E8C506DC0CDA4F9C14F6C3FF17C1177E4725F3?allowInterrupt=1
+              - section: Section 228
+                row: "12"
+                available: true
+                price: 146
+                link:
+                  rel: image
+                  href: https://publicdocs-corp.documents.us2.oraclecloud.com/documents/link/LF7206C60A9212DA72124CA9F6C3FF17C1177E4725F3/file/DF03AD812F69F02A82C04FC2F6C3FF17C1177E4725F3?allowInterrupt=1
+  /beers:
+    x-summary: Beers Collection
+    get:
+      summary: List All Beers
+      responses:
+        200:
+          description: Successful Response
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Beer'
+          examples:
+            application/json; charset=utf-8:
+              - name: Guiness
+                description: No preservatives or additives. 100% natural, ingredients create a unique flavour
+                link:
+                  rel: image
+                  href: https://publicdocs-corp.documents.us2.oraclecloud.com/documents/link/LF7206C60A9212DA72124CA9F6C3FF17C1177E4725F3/file/D2680B911AEB03B8C3B6EF22F6C3FF17C1177E4725F3?RevLabel=LATEST&allowInterrupt=1
+              - name: Pilsner Urquell
+                description: World's first pilsner. Grainy malt center with a light touch of butter flavor
+                link:
+                  rel: image
+                  href: https://publicdocs-corp.documents.us2.oraclecloud.com/documents/link/LF7206C60A9212DA72124CA9F6C3FF17C1177E4725F3/file/D38CC50D762E50731F505711F6C3FF17C1177E4725F3?RevLabel=LATEST&allowInterrupt=1
+              - name: Schlappe-Seppel
+                description: Smooth bitter, tangy, fruity, full-bodied - more than a beer, it's an attitude
+                link:
+                  rel: image
+                  href: https://publicdocs-corp.documents.us2.oraclecloud.com/documents/link/LF7206C60A9212DA72124CA9F6C3FF17C1177E4725F3/file/DFE12285193404897A6331F4F6C3FF17C1177E4725F3?RevLabel=LATEST?allowInterrupt=1
+
+definitions:
+  Seat:
+    title: Seat
+    type: object
+    properties:
+      section:
+        type: string
+      row:
+        type: string
+      available:
+        type: boolean
+      price:
+        type: number
+      link:
+        type: object
+        items:
+          $ref: '#/definitions/Link'
+    required:
+      - section
+      - row
+      - available
+      - price
+  Beer:
+    title: Beer
+    type: object
+    properties:
+      name:
+        type: string
+      description:
+        type: string
+      link:
+        type: object
+        items:
+          $ref: '#/definitions/Link'
+    required:
+      - name
+  Link:
+    title: Link
+    type: object
+    properties:
+      rel:
+        type: string
+      href:
+        type: string
+    required:
+      - href
