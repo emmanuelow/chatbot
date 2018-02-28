@@ -4,7 +4,7 @@ var port = process.env.PORT || 3000
 var seats = [
     {
         "section": "Section 115",
-        "row": "3",
+        // "row": "3",
         "available": true,
         "price": 299,
         "link": {
@@ -15,7 +15,7 @@ var seats = [
     {
         "section": "Section 216",
         "row": "7",
-        "available": true,
+        "available_flag": true,
         "price": 219,
         "link": {
             "rel": "image",
@@ -77,7 +77,7 @@ app.get('/seats', function (req, res) {
   res.json(seats)
 })
 
-app.get('/beers', function (req, res) {
+app.get('/beer', function (req, res) {
   res.json(beers)
 })
 
