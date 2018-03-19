@@ -62,7 +62,7 @@ var beers = [
                 {
         "name": "Heineken",
         "description": "Crisp, clean and refreshing, this popular beer is a classic European style Lager",
-        "links": {
+        "link": {
             "rel": "image",
             "href": "https://publicdocs-corp.documents.us2.oraclecloud.com/documents/link/LF7206C60A9212DA72124CA9F6C3FF17C1177E4725F3/file/DE79A523EC91B0687D5AA852F6C3FF17C1177E4725F3?dRevLabel=LATEST&allowInterrupt=1"
         }
