@@ -4,7 +4,7 @@ var port = process.env.PORT || 3000
 var seats = [
     {
         "section": "Section 115",
-        // "row": "3",
+        "row": "3",
         "available": true,
         "price": 299,
         "link": {
@@ -15,7 +15,7 @@ var seats = [
     {
         "section": "Section 216",
         "row": "7",
-        "available_flag": true,
+        "available": true,
         "price": 219,
         "link": {
             "rel": "image",
@@ -61,7 +61,7 @@ var beers = [
     },
                 {
         "name": "Heineken",
-        // "description": "Crisp, clean and refreshing, this popular beer is a classic European style Lager",
+        "description": "Crisp, clean and refreshing, this popular beer is a classic European style Lager",
         "links": {
             "rel": "image",
             "href": "https://publicdocs-corp.documents.us2.oraclecloud.com/documents/link/LF7206C60A9212DA72124CA9F6C3FF17C1177E4725F3/file/DE79A523EC91B0687D5AA852F6C3FF17C1177E4725F3?dRevLabel=LATEST&allowInterrupt=1"
@@ -77,7 +77,7 @@ app.get('/seats', function (req, res) {
   res.json(seats)
 })
 
-app.get('/beer', function (req, res) {
+app.get('/beers', function (req, res) {
   res.json(beers)
 })
 
