@@ -5,7 +5,7 @@ var seats = [
     {
         "section": "Section 115",
         "row": "3",
-        "available": true,
+        "available_status": true,
         "price": 299,
         "link": {
             "rel": "image",
@@ -14,7 +14,7 @@ var seats = [
     },
     {
         "section": "Section 216",
-        "row": "7",
+        // "row": "7",
         "available": true,
         "price": 219,
         "link": {
@@ -77,7 +77,7 @@ app.get('/seats', function (req, res) {
   res.json(seats)
 })
 
-app.get('/beers', function (req, res) {
+app.get('/beer', function (req, res) {
   res.json(beers)
 })
 
